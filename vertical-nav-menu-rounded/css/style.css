@@ -1,1 +1,96 @@
+* {
+    --bg-color: #B2BEB5;
+    --primary-color: #5E716A;
+    --secondary-color: grey;
+    --font-p-color: black;
+    --font-secondary-color: rgb(239, 234, 234);
+    box-sizing: border-box;
+}
 
+html {
+    font-family: system-ui;
+}
+
+body {
+    min-height: 200vh;
+    background-color: var(--bg-color);
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    margin: 0px;
+    padding: 0px;
+    gap: 4rem;
+}
+
+nav {
+    position: sticky;
+    top: 0px;
+    max-height: 100svh;
+    background-color: var(--primary-color);
+
+    & .nav-list {
+        height: 100svh;
+        color: white;
+        font-size: 1.15rem;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 0px 1rem;
+        margin: 0px;
+        list-style: none;
+        gap: 1rem;
+
+        & li {
+            --position-curve: -20px;
+            margin-left: 2rem;
+            padding: 1rem 2rem;
+            border-radius: 100vw 0px 0px 100vw;
+
+            & a {
+                display: inline-flex;
+                width: 100%;
+                color: whitesmoke;
+                text-decoration: none;
+            }
+
+            &.active {
+                background-color: var(--bg-color);
+                position: relative;
+                font-weight: 600;
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: calc(var(--position-curve)*-1);
+                    width: calc(var(--position-curve)*-1);
+                    background-color: var(--primary-color);
+                    right: 0px;
+                }
+
+                &::before {
+                    top: var(--position-curve);
+                    box-shadow: calc(var(--position-curve)*-1/4) calc(var(--position-curve)*-1/4) 0px calc(var(--position-curve)*-0.25) var(--bg-color);
+                    border-radius: 0px 0px 100vw;
+                }
+
+                &::after {
+                    bottom: calc(var(--position-curve));
+                    box-shadow: calc(var(--position-curve)*-1/4) calc(var(--position-curve)/4) 0px calc(var(--position-curve)*-0.25) var(--bg-color);
+                    border-radius: 0px 100vw 0px 0px;
+                }
+            }
+        }
+    }
+}
+
+h3 {
+    color: var(--font-secondary-color);
+    text-transform: capitalize;
+    margin-bottom: 4rem;
+    width: fit-content;
+    padding-block: 1rem;
+    border-bottom: 2px solid var(--font-secondary-color);
+}
+
+h1 {
+    text-transform: capitalize;
+}
