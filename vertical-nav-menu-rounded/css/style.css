@@ -57,8 +57,9 @@ nav {
                 background-color: var(--bg-color);
                 position: relative;
                 font-weight: 600;
-                box-shadow: inset 10px 5px 15px -10px rgb(104, 102, 102),
+                box-shadow: inset 10px 10px 10px -10px rgb(104, 102, 102),
                     inset -30px -40px 0 10px var(--bg-color);
+                transition: box-shadow 0.5s ease-out;
 
                 &::before,
                 &::after {
