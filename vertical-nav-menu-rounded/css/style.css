@@ -52,6 +52,7 @@ nav {
             }
 
             &.active {
+                view-transition-name: activeNavTab;
                 background-color: var(--bg-color);
                 position: relative;
                 font-weight: 600;
@@ -77,8 +78,22 @@ nav {
                     box-shadow: calc(var(--position-curve)*-1/4) calc(var(--position-curve)/4) 0px calc(var(--position-curve)*-0.25) var(--bg-color);
                     border-radius: 0px 100vw 0px 0px;
                 }
+
+
             }
+
+            &:last-child {
+                margin-top: auto;
+                margin-bottom: 0;
+                border-radius: 0;
+                border-top: 1px solid #e1e1e1;
+                margin-left: 0;
+
+            }
+
         }
+
+
     }
 }
 
