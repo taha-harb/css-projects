@@ -44,6 +44,7 @@ nav {
             padding: 1rem 2rem;
             border-radius: 100vw 0px 0px 100vw;
 
+
             & a {
                 display: inline-flex;
                 width: 100%;
@@ -56,6 +57,8 @@ nav {
                 background-color: var(--bg-color);
                 position: relative;
                 font-weight: 600;
+                box-shadow: inset 10px 5px 15px -10px rgb(104, 102, 102),
+                    inset -30px -30px 0 4px var(--bg-color);
 
                 &::before,
                 &::after {
