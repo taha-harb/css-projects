@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lebanon flag</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: 0;
+    }
+    :root {
+      --size-flag: 20rem;
+    }
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: calc(var(--size-flag) * 2);
+      width: calc(var(--size-flag) * 3);
+      background-color: aliceblue;
+    }
+    .red {
+      height: calc(var(--size-flag) / 2);
+      background-color: red;
+    }
+    .white {
+      position: relative;
+      height: calc(var(--size-flag));
+      background-color: white;
+      display: grid;
+      place-items: center;
+    }
+    .white .cedars {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="red"></div>
+      <div class="white">
+        <object
+          preserveAspectRatio="none"
+          class="cedars"
+          type="image/svg+xml"
+          data="./cedars.svg"
+        ></object>
+      </div>
+      <div class="red"></div>
+    </div>
+  </body>
+</html>

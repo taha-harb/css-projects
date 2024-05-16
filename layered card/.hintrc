@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "grid-template-columns: subgrid",
+          "grid-template-rows: subgrid",
+          "scale"
+        ]
+      }
+    ]
+  }
+}

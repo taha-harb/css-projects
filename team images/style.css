@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --avatar-size: 80px;
+  --avatar-column: calc(var(--avatar-size) / 2);
+  --avatar-count: 10;
+}
+
+body {
+  padding: 10px;
+  background: rgba(222, 222, 222, 0.565);
+}
+
+h1 {
+  color: rgba(85, 71, 71, 0.825);
+  text-decoration: underline dashed;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.avatars {
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(var(--avatar-count), var(--avatar-column));
+  grid-template-rows: 1fr;
+  place-items: center;
+  transition: grid-template-columns 500ms;
+
+  &:hover {
+    --avatar-column: calc(var(--avatar-size) * 1.2);
+    & .avatar:hover {
+      & .avatartext {
+        display: block;
+      }
+    }
+
+    transition-delay: 0ms;
+  }
+
+  transition-delay: 500ms;
+}
+.avatar {
+  position: relative;
+  border: 1px solid #000;
+  width: calc(var(--avatar-size) + 1px);
+  height: calc(var(--avatar-size) + 1px);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: scale 500ms;
+
+  &:hover {
+    scale: 2;
+    z-index: 2;
+  }
+  &:not(:hover) {
+    filter: blur(1px);
+    .avatars:not(:hover) & {
+      filter: blur(0);
+    }
+  }
+  @supports selector(:has(+ *)) {
+    &:hover + .avatar,
+    &:has(+ .avatar:hover) {
+      border-color: lime;
+      filter: blur(0);
+      scale: 1.5;
+      z-index: 1;
+    }
+  }
+  & .avatartext {
+    font-size: 0.5rem;
+    display: none;
+    width: 50px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 110%;
+    left: 95%;
+    margin-left: -60px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+    }
+  }
+
+  & img {
+    width: var(--avatar-size);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+  }
+}
