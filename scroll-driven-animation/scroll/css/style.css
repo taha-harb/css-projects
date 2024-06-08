@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -111,6 +112,16 @@ main {
 
 }
 
+.footer {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #f3e5e5;
+    align-items: center;
+    height: 80px;
+}
 
 .header,
 .nav,
