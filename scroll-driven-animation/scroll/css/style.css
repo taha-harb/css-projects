@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+
+
+.header {
+    background-color: #f5f4f4;
+    animation-name: add-shadow;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    height: 200px;
+
+    & .nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-inline-start: 10px;
+        gap: 5px;
+
+
+        & .avatar {
+            border-radius: 50%;
+            border: 1px solid #d6d3d3;
+            aspect-ratio: 1;
+            height: 150px;
+            width: 150px;
+
+            animation-name: change-img;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+            /* animation: change-img linear both; */
+        }
+
+        & .info {
+            scale: 1;
+            animation-name: shrink-name;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+
+            & h1 {
+                font-size: 3rem;
+                font-weight: 900;
+                /* animation: shrink-name linear both; */
+            }
+
+            & p {
+                font-size: 1.2rem;
+                color: rgb(198, 197, 197);
+                font-weight: 500;
+                padding-inline-start: 3ch;
+            }
+        }
+    }
+
+}
+
+main {
+
+    display: grid;
+    height: 800px;
+    grid-template-columns: repeat(2, fr);
+    grid-template-rows: 300px 100px 150px 50px;
+    gap: 10px;
+
+    & .card {
+        background-color: #fae8e8;
+        border: 2px solid #f9dbdb;
+
+        &.card1 {
+            grid-area: 1/1;
+
+
+        }
+
+        &.card2 {
+            grid-area: 1/2;
+
+
+        }
+
+        &.card3 {
+            grid-area: 2/1;
+
+        }
+
+        &.card4 {
+            grid-area: 3/span 2;
+
+        }
+
+        &.card5 {
+            grid-area: 4/ 2
+        }
+
+    }
+
+}
+
+
+.header,
+.nav,
+h1,
+.info,
+.avatar {
+    animation-timeline: scroll(block);
+    animation-range: 0 50px;
+}
+
+@keyframes add-shadow {
+
+    to {
+        box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.88);
+        height: 80px;
+        align-items: flex-end;
+
+    }
+}
+
+@keyframes change-img {
+
+    to {
+        height: 60px;
+        width: 60px;
+        padding: 0;
+        margin: 2px;
+        align-self: center;
+    }
+
+}
+
+@keyframes shrink-name {
+    to {
+        scale: 0.7;
+        padding: 0;
+
+
+
+    }
+}
