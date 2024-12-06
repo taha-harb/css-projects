@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Align-content Example</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>How to center the content inside HTML Block</h1>
+    <main class="container">
+      <section class="center">
+        <header>
+          <h2>Center block Example #01 - <span>Position</span></h2>
+        </header>
+        <div class="center01">
+          <code>
+            <pre>
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translateX(-50%);
+            </pre>
+          </code>
+        </div>
+      </section>
+      <section class="center">
+        <header>
+          <h2>Center block Example #02 - <span>Flex</span></h2>
+        </header>
+        <div class="center02">
+          <code>
+            <pre>
+display: flex;
+align-items: center;
+justify-content: center;
+            </pre>
+          </code>
+        </div>
+      </section>
+      <section class="center">
+        <header>
+          <h2>Center block Example #03 - <span>Grid</span></h2>
+        </header>
+        <div class="center03">
+          <code>
+            <pre>
+display: grid;
+place-items: center;
+            </pre>
+          </code>
+        </div>
+      </section>
+      <section class="center">
+        <header>
+          <h2>
+            Center block Example #04 - <span>text-align & align-content🆕</span>
+          </h2>
+        </header>
+        <div class="center04">
+          <code>
+            <pre>
+text-align: center;
+align-content: center;
+            </pre>
+          </code>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
